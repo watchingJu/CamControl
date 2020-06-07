@@ -18,6 +18,8 @@ import com.chernowii.camcontrol.view.CameraActivity
 import java.io.File
 
 class MainActivity : AppCompatActivity() {
+    val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         gridview.adapter = ImgAdapter(this)
 
         gridview.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
+            Log.d(TAG, "onItemClicked: position=$position, id=$id")
             val myIntent = Intent(this@MainActivity, CameraActivity::class.java)
             myIntent.putExtra("camera", position) //Optional parameters
             this@MainActivity.startActivity(myIntent)
