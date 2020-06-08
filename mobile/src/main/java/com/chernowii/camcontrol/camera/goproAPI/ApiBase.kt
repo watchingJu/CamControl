@@ -5,6 +5,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// TODO: move variables like baseUrl
+
 object ApiBase {
 
 
