@@ -23,7 +23,8 @@ class ImgAdapter(private val mContext: Context) : BaseAdapter() {
     }
 
     override fun getItemId(position: Int): Long {
-        return 0
+        //return 0
+        return mThumbIds[position].toLong()
     }
 
     // create a new ImageView for each item referenced by the Adapter

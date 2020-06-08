@@ -11,19 +11,24 @@ import com.chernowii.camcontrol.R
 import com.luseen.spacenavigation.SpaceItem
 import com.luseen.spacenavigation.SpaceNavigationView
 import com.luseen.spacenavigation.SpaceOnClickListener
+import kotlinx.android.synthetic.main.activity_camera.*
 
 class CameraActivity : Activity() {
 
     val TAG = "CameraActivity"
-
-    val cameraId:String = intent.getStringExtra("camera")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "view: CameraActivity")
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
+
+        // val cameraId = intent.getSerializableExtra("camera")
+        val cameraImage:Int = intent.getLongExtra("cameraImage", 0).toInt()
+
         val spaceNavigationView = findViewById<View>(R.id.space) as SpaceNavigationView
+        cameraimage.setImageResource(cameraImage)
+
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState)
         spaceNavigationView.setCentreButtonIcon(R.drawable.ic_preview_btn)
         spaceNavigationView.addSpaceItem(SpaceItem("MEDIA", R.drawable.ic_mediabrowse))

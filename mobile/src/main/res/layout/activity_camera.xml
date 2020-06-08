@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.CameraActivity">
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <ImageView
+            android:id="@+id/cameraimage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/camera_selector_hero5"/>
-
+            android:src="@drawable/camera_selector_hero5" />
 
         <com.luseen.spacenavigation.SpaceNavigationView
             android:id="@+id/space"

@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         gridview.onItemClickListener = AdapterView.OnItemClickListener { parent, v, position, id ->
             Log.d(TAG, "onItemClicked: position=$position, id=$id")
             val myIntent = Intent(this@MainActivity, CameraActivity::class.java)
-            myIntent.putExtra("camera", position) //Optional parameters
+            // myIntent.putExtra("camera", position) //Optional parameters
+            myIntent.putExtra("cameraImage", gridview.adapter.getItemId(position))
             this@MainActivity.startActivity(myIntent)
         }
     }
