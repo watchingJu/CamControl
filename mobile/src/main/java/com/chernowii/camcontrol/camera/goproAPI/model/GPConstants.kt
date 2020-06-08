@@ -10,6 +10,8 @@ import retrofit2.Call
 
 /**
  * Created by konrad on 1/2/17.
+ *
+ * infos can be found here: https://github.com/KonradIT/goprowifihack/tree/master/HERO4
  */
 
 object GPConstants {
@@ -17,6 +19,7 @@ object GPConstants {
 
     class Commands {
         object Stream {
+            // also needs to send a keep-alive
             var Restart = GoProApi.execute("?p1=gpStream&a1=proto_v2&c1=restart")
         }
 
