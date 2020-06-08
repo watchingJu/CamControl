@@ -1,5 +1,6 @@
 package com.chernowii.camcontrol.camera.goproAPI
 
+import com.chernowii.camcontrol.camera.goproAPI.model.GPStatusResponse
 import com.chernowii.camcontrol.camera.goproAPI.model.GoProResponse
 import com.chernowii.camcontrol.camera.goproAPI.model.media.GoProMediaList
 import com.chernowii.camcontrol.camera.goproAPI.model.media.GoProMetadata
@@ -28,4 +29,8 @@ interface ApiClient {
 
     @GET("/gp/getMediaMetadata")
     fun getThumbnail(@Query("p") GoProMedia: String): Call<GoProMetadata>
+
+    // TODO: find out what the response will be (JSON)
+    @GET("/gp/gpControl/status")
+    fun getStatus(): Call<GPStatusResponse>
 }
