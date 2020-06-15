@@ -19,29 +19,29 @@ data class GPStatusResponse  (
     data class Status(
             @SerializedName("1") val intBatteryAvailable: Int,
             @SerializedName("2") val intBatteryLevel: Int,
-            @SerializedName("3") val unknown_03: Int,
-            @SerializedName("4") val unknown_04: Int,
-            @SerializedName("6") val unknown_06: Int,
+            @SerializedName("3") val externalBatteryPresent: Int,
+            @SerializedName("4") val externalBatteryLevel: Int,
+            @SerializedName("6") val systemHot: Int,
             @SerializedName("8") val recordingStatus: Int,
-            @SerializedName("9") val unknown_09: Int,
-            @SerializedName("10") val unknown_10: Int,
-            @SerializedName("11") val unknown_11: Int,
+            @SerializedName("9") val quickCaptureActive: Int,
+            @SerializedName("10") val encodingActive: Int,
+            @SerializedName("11") val lcdLockActive: Int,
             @SerializedName("13") val currentRecordingVideoDuration: Int,
-            @SerializedName("14") val unknown_14: Int,
-            @SerializedName("15") val unknown_15: Int,
-            @SerializedName("16") val unknown_16: Int,
-            @SerializedName("17") val unknown_17: Int,
-            @SerializedName("19") val unknown_19: Int,
-            @SerializedName("20") val unknown_20: Int,
-            @SerializedName("21") val unknown_21: Int,
-            @SerializedName("22") val unknown_22: Int,
-            @SerializedName("23") val unknown_23: Int,
-            @SerializedName("24") val unknown_24: Int,
-            @SerializedName("26") val unknown_26: Int,
-            @SerializedName("27") val unknown_27: Int,
-            @SerializedName("28") val unknown_28: Int,
-            @SerializedName("29") val unknown_29: String,
-            @SerializedName("30") val unknown_30: String,
+            @SerializedName("14") val broadcstProgressCounter: Int,
+            @SerializedName("15") val broadcastViewersCounter: Int,
+            @SerializedName("16") val broadcastBStatus: Int,
+            @SerializedName("17") val wirelessEnabled: Int,
+            @SerializedName("19") val wirelessState: Int,
+            @SerializedName("20") val wirelessType: Int,
+            @SerializedName("21") val wirelessPairTime: Int,
+            @SerializedName("22") val wirelessScanState: Int,
+            @SerializedName("23") val wirelessScanTime: Int,
+            @SerializedName("24") val wirelessProvisionStatus: Int,
+            @SerializedName("26") val wirelessRemoteControlVersion: Int,
+            @SerializedName("27") val wirelessRemoteControlConnected: Int,
+            @SerializedName("28") val wirelessPairing: Int,
+            @SerializedName("29") val wirelessWlanSsid: String,
+            @SerializedName("30") val wirelessApSsid: String,
             @SerializedName("31") val numberOfClientsConnected: Int,
             @SerializedName("32") val streamingFeedStatus: Int,
             @SerializedName("33") val sdCardInserted: Int,
@@ -52,29 +52,29 @@ data class GPStatusResponse  (
             @SerializedName("38") val numberOfAllPhotosTaken: Int,
             @SerializedName("39") val numberOfAllVideosTaken: Int,
             @SerializedName("40") val dateTimeHex: String,
-            @SerializedName("41") val unknown_41: Int,
-            @SerializedName("42") val unknown_42: Int,
+            @SerializedName("41") val fwupdateOtaStatus: Int,
+            @SerializedName("42") val fwupdateDlCancelPending: Int,
             @SerializedName("43") val currentMode: Int,
             @SerializedName("44") val currentSubMode: Int,
-            @SerializedName("45") val unknown_45: Int,
-            @SerializedName("46") val unknown_46: Int,
-            @SerializedName("47") val unknown_47: Int,
-            @SerializedName("48") val unknown_48: Int,
-            @SerializedName("49") val unknown_49: Int,
+            @SerializedName("45") val cameraLockActive: Int,
+            @SerializedName("46") val videoProtuneDefault: Int,
+            @SerializedName("47") val photoProtuneDefault: Int,
+            @SerializedName("48") val msProtuneDefault: Int,
+            @SerializedName("49") val multiShotCountdown: Int,
             @SerializedName("54") val remainingFreeSpace: Int,
-            @SerializedName("55") val unknown_55: Int,
-            @SerializedName("56") val unknown_56: Int,
-            @SerializedName("57") val unknown_57: Int,
-            @SerializedName("58") val unknown_58: Int,
-            @SerializedName("59") val unknown_59: Int
+            @SerializedName("55") val streamSupported: Int,
+            @SerializedName("56") val wirelessWifiBars: Int,
+            @SerializedName("57") val currentTimeMs: Int,
+            @SerializedName("58") val storageNumHighlights: Int,
+            @SerializedName("59") val storageLastHighlightTimeMs: Int
     ) {
     override fun toString(): String {
-        return "Status(intBatteryAvailable=$intBatteryAvailable, intBatteryLevel=$intBatteryLevel, unknown_03=$unknown_03, unknown_04=$unknown_04, unknown_06=$unknown_06, recordingStatus=$recordingStatus, unknown_09=$unknown_09, unknown_10=$unknown_10, unknown_11=$unknown_11, currentRecordingVideoDuration=$currentRecordingVideoDuration, unknown_14=$unknown_14, unknown_15=$unknown_15, unknown_16=$unknown_16, unknown_17=$unknown_17, unknown_19=$unknown_19, unknown_20=$unknown_20, unknown_21=$unknown_21, unknown_22=$unknown_22, unknown_23=$unknown_23, unknown_24=$unknown_24, unknown_26=$unknown_26, unknown_27=$unknown_27, unknown_28=$unknown_28, unknown_29='$unknown_29', unknown_30='$unknown_30', numberOfClientsConnected=$numberOfClientsConnected, streamingFeedStatus=$streamingFeedStatus, sdCardInserted=$sdCardInserted, remainingPhotos=$remainingPhotos, remainingVideoTime=$remainingVideoTime, numberOfBatchPhotosTaken=$numberOfBatchPhotosTaken, numberOfVideosShot=$numberOfVideosShot, numberOfAllPhotosTaken=$numberOfAllPhotosTaken, numberOfAllVideosTaken=$numberOfAllVideosTaken, dateTimeHex='$dateTimeHex', unknown_41=$unknown_41, unknown_42=$unknown_42, currentMode=$currentMode, currentSubMode=$currentSubMode, unknown_45=$unknown_45, unknown_46=$unknown_46, unknown_47=$unknown_47, unknown_48=$unknown_48, unknown_49=$unknown_49, remainingFreeSpace=$remainingFreeSpace, unknown_55=$unknown_55, unknown_56=$unknown_56, unknown_57=$unknown_57, unknown_58=$unknown_58, unknown_59=$unknown_59)"
+        return "Status(intBatteryAvailable=$intBatteryAvailable, intBatteryLevel=$intBatteryLevel, externalBatteryPresent=$externalBatteryPresent, externalBatteryLevel=$externalBatteryLevel, systemHot=$systemHot, recordingStatus=$recordingStatus, quickCaptureActive=$quickCaptureActive, encodingActive=$encodingActive, lcdLockActive=$lcdLockActive, currentRecordingVideoDuration=$currentRecordingVideoDuration, broadcstProgressCounter=$broadcstProgressCounter, broadcastViewersCounter=$broadcastViewersCounter, broadcastBStatus=$broadcastBStatus, wirelessEnabled=$wirelessEnabled, wirelessState=$wirelessState, wirelessType=$wirelessType, wirelessPairTime=$wirelessPairTime, wirelessScanState=$wirelessScanState, wirelessScanTime=$wirelessScanTime, wirelessProvisionStatus=$wirelessProvisionStatus, wirelessRemoteControlVersion=$wirelessRemoteControlVersion, wirelessRemoteControlConnected=$wirelessRemoteControlConnected, wirelessPairing=$wirelessPairing, wirelessWlanSsid='$wirelessWlanSsid', wirelessApSsid='$wirelessApSsid', numberOfClientsConnected=$numberOfClientsConnected, streamingFeedStatus=$streamingFeedStatus, sdCardInserted=$sdCardInserted, remainingPhotos=$remainingPhotos, remainingVideoTime=$remainingVideoTime, numberOfBatchPhotosTaken=$numberOfBatchPhotosTaken, numberOfVideosShot=$numberOfVideosShot, numberOfAllPhotosTaken=$numberOfAllPhotosTaken, numberOfAllVideosTaken=$numberOfAllVideosTaken, dateTimeHex='$dateTimeHex', fwupdateOtaStatus=$fwupdateOtaStatus, fwupdateDlCancelPending=$fwupdateDlCancelPending, currentMode=$currentMode, currentSubMode=$currentSubMode, cameraLockActive=$cameraLockActive, videoProtuneDefault=$videoProtuneDefault, photoProtuneDefault=$photoProtuneDefault, msProtuneDefault=$msProtuneDefault, multiShotCountdown=$multiShotCountdown, remainingFreeSpace=$remainingFreeSpace, streamSupported=$streamSupported, wirelessWifiBars=$wirelessWifiBars, currentTimeMs=$currentTimeMs, storageNumHighlights=$storageNumHighlights, storageLastHighlightTimeMs=$storageLastHighlightTimeMs)"
     }
 }
 
 data class Settings (
-            @SerializedName("1") val unknown_01: Int,
+            @SerializedName("1") val defaultVideoSubMode: Int,
             @SerializedName("2") val videoResolution: Int,
             @SerializedName("3") val frameRate: Int,
             @SerializedName("4") val fovVideo: Int,
@@ -152,6 +152,6 @@ data class Settings (
             // @SerializedName("76") val isoMinMs: Int
     ) {
     override fun toString(): String {
-        return "Settings(unknown_01=$unknown_01, videoResolution=$videoResolution, frameRate=$frameRate, fovVideo=$fovVideo, timelapsVideoInterval=$timelapsVideoInterval, loopingVideoInterval=$loopingVideoInterval, photoVideoInterval=$photoVideoInterval, lowLight=$lowLight, spotMeterVideo=$spotMeterVideo, protuneVideo=$protuneVideo, whiteBalanceVideo=$whiteBalanceVideo, colorVideo=$colorVideo, isoLimitVideo=$isoLimitVideo, sharpnessVideo=$sharpnessVideo, evCompVideo=$evCompVideo, unknown_16=$unknown_16, megapixelsPhoto=$megapixelsPhoto, continousMode=$continousMode, shutter=$shutter, spotMeterPhoto=$spotMeterPhoto, protunePhoto=$protunePhoto, whiteBalancePhoto=$whiteBalancePhoto, colorPhoto=$colorPhoto, isoLimitPhoto=$isoLimitPhoto, sharpnessPhoto=$sharpnessPhoto, evCompPhoto=$evCompPhoto, defaultMultishotSubMode=$defaultMultishotSubMode, megapixelsMs=$megapixelsMs, burstRateMs=$burstRateMs, timelapsIntervalMs=$timelapsIntervalMs, nightShutterExposureMs=$nightShutterExposureMs, nightlapsIntervalMs=$nightlapsIntervalMs, spotMeterMs=$spotMeterMs, protuneMs=$protuneMs, whiteBalanceMs=$whiteBalanceMs, colorMs=$colorMs, isoLimitMs=$isoLimitMs, sharpnessMs=$sharpnessMs, evCompMs=$evCompMs, unknown_40=$unknown_40, unknown_41=$unknown_41, unknown_42=$unknown_42, unknown_43=$unknown_43, unknown_44=$unknown_44, unknown_45=$unknown_45, unknown_46=$unknown_46, unknown_47=$unknown_47, unknown_48=$unknown_48, lcdBrightness=$lcdBrightness, lcdLock=$lcdLock, lcdTimeoutSleep=$lcdTimeoutSleep, orientation=$orientation, defaultBootMode=$defaultBootMode, quickCapture=$quickCapture, ledStatus=$ledStatus, volumeBeeps=$volumeBeeps, videoFormat=$videoFormat, onScreenData=$onScreenData, autoPowerOff=$autoPowerOff, unknown_60=$unknown_60, unknown_61=$unknown_61, unknown_62=$unknown_62, unknown_63=$unknown_63, unknown_64=$unknown_64, unknown_65=$unknown_65, unknown_66=$unknown_66, unknown_67=$unknown_67, currentVideoSubMode=$currentVideoSubMode, photoSubMode=$photoSubMode, multishotSubMode=$multishotSubMode, unknown_71=$unknown_71, lcdDisplay=$lcdDisplay)"
+        return "Settings(defaultVideoSubMode=$defaultVideoSubMode, videoResolution=$videoResolution, frameRate=$frameRate, fovVideo=$fovVideo, timelapsVideoInterval=$timelapsVideoInterval, loopingVideoInterval=$loopingVideoInterval, photoVideoInterval=$photoVideoInterval, lowLight=$lowLight, spotMeterVideo=$spotMeterVideo, protuneVideo=$protuneVideo, whiteBalanceVideo=$whiteBalanceVideo, colorVideo=$colorVideo, isoLimitVideo=$isoLimitVideo, sharpnessVideo=$sharpnessVideo, evCompVideo=$evCompVideo, unknown_16=$unknown_16, megapixelsPhoto=$megapixelsPhoto, continousMode=$continousMode, shutter=$shutter, spotMeterPhoto=$spotMeterPhoto, protunePhoto=$protunePhoto, whiteBalancePhoto=$whiteBalancePhoto, colorPhoto=$colorPhoto, isoLimitPhoto=$isoLimitPhoto, sharpnessPhoto=$sharpnessPhoto, evCompPhoto=$evCompPhoto, defaultMultishotSubMode=$defaultMultishotSubMode, megapixelsMs=$megapixelsMs, burstRateMs=$burstRateMs, timelapsIntervalMs=$timelapsIntervalMs, nightShutterExposureMs=$nightShutterExposureMs, nightlapsIntervalMs=$nightlapsIntervalMs, spotMeterMs=$spotMeterMs, protuneMs=$protuneMs, whiteBalanceMs=$whiteBalanceMs, colorMs=$colorMs, isoLimitMs=$isoLimitMs, sharpnessMs=$sharpnessMs, evCompMs=$evCompMs, unknown_40=$unknown_40, unknown_41=$unknown_41, unknown_42=$unknown_42, unknown_43=$unknown_43, unknown_44=$unknown_44, unknown_45=$unknown_45, unknown_46=$unknown_46, unknown_47=$unknown_47, unknown_48=$unknown_48, lcdBrightness=$lcdBrightness, lcdLock=$lcdLock, lcdTimeoutSleep=$lcdTimeoutSleep, orientation=$orientation, defaultBootMode=$defaultBootMode, quickCapture=$quickCapture, ledStatus=$ledStatus, volumeBeeps=$volumeBeeps, videoFormat=$videoFormat, onScreenData=$onScreenData, autoPowerOff=$autoPowerOff, unknown_60=$unknown_60, unknown_61=$unknown_61, unknown_62=$unknown_62, unknown_63=$unknown_63, unknown_64=$unknown_64, unknown_65=$unknown_65, unknown_66=$unknown_66, unknown_67=$unknown_67, currentVideoSubMode=$currentVideoSubMode, photoSubMode=$photoSubMode, multishotSubMode=$multishotSubMode, unknown_71=$unknown_71, lcdDisplay=$lcdDisplay)"
     }
 }
