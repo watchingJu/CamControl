@@ -14,12 +14,14 @@ import com.chernowii.camcontrol.R
 import com.chernowii.camcontrol.camera.goproAPI.ApiBase
 import com.chernowii.camcontrol.camera.goproAPI.ApiClient
 import com.chernowii.camcontrol.camera.goproAPI.model.GPStatusResponse
+import com.google.gson.JsonSyntaxException
 import com.luseen.spacenavigation.SpaceItem
 import com.luseen.spacenavigation.SpaceNavigationView
 import com.luseen.spacenavigation.SpaceOnClickListener
 import kotlinx.android.synthetic.main.activity_camera.*
 import retrofit2.Call
 import retrofit2.Response
+import java.net.SocketTimeoutException
 
 
 class CameraActivity : Activity() {
@@ -87,8 +89,16 @@ class CameraActivity : Activity() {
                         }
 
                         override fun onFailure(call: Call<GPStatusResponse>, t: Throwable) {
-                            Log.d(TAG, "camera is not reachable")
-                            Toast.makeText(this@CameraActivity, "Camera is not reachable", Toast.LENGTH_SHORT).show()
+                            if (t is SocketTimeoutException) {
+                                Log.i(TAG, "camera is not reachable", t)
+                                Toast.makeText(this@CameraActivity, "Camera is not reachable", Toast.LENGTH_SHORT).show()
+                            } else if (t is JsonSyntaxException) {
+                                Log.i(TAG, "error while parsing response", t)
+                                Toast.makeText(this@CameraActivity, "error while parsing response", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Log.e(TAG, t.message, t)
+                                Toast.makeText(this@CameraActivity, "unknown error", Toast.LENGTH_SHORT).show()
+                            }
                         }
 
                     })
