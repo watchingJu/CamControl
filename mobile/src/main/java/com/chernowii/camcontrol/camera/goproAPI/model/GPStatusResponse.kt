@@ -5,7 +5,11 @@ import com.google.gson.annotations.SerializedName
 data class GPStatusResponse  (
         @SerializedName("status") val status: Status,
         @SerializedName("settings") val settings: Settings
-)
+) {
+    override fun toString(): String {
+        return "GPStatusResponse(status=$status, settings=$settings)"
+    }
+}
 
 /*
  * TODO: status.39 is unclear as it has 2 descritpions:
@@ -36,8 +40,8 @@ data class GPStatusResponse  (
             @SerializedName("26") val unknown_26: Int,
             @SerializedName("27") val unknown_27: Int,
             @SerializedName("28") val unknown_28: Int,
-            @SerializedName("29") val unknown_29: Int,
-            @SerializedName("30") val unknown_30: Int,
+            @SerializedName("29") val unknown_29: String,
+            @SerializedName("30") val unknown_30: String,
             @SerializedName("31") val numberOfClientsConnected: Int,
             @SerializedName("32") val streamingFeedStatus: Int,
             @SerializedName("33") val sdCardInserted: Int,
@@ -47,7 +51,7 @@ data class GPStatusResponse  (
             @SerializedName("37") val numberOfVideosShot: Int,
             @SerializedName("38") val numberOfAllPhotosTaken: Int,
             @SerializedName("39") val numberOfAllVideosTaken: Int,
-            @SerializedName("40") val unknown_40: Int,
+            @SerializedName("40") val dateTimeHex: String,
             @SerializedName("41") val unknown_41: Int,
             @SerializedName("42") val unknown_42: Int,
             @SerializedName("43") val currentMode: Int,
@@ -63,9 +67,13 @@ data class GPStatusResponse  (
             @SerializedName("57") val unknown_57: Int,
             @SerializedName("58") val unknown_58: Int,
             @SerializedName("59") val unknown_59: Int
-    )
+    ) {
+    override fun toString(): String {
+        return "Status(intBatteryAvailable=$intBatteryAvailable, intBatteryLevel=$intBatteryLevel, unknown_03=$unknown_03, unknown_04=$unknown_04, unknown_06=$unknown_06, recordingStatus=$recordingStatus, unknown_09=$unknown_09, unknown_10=$unknown_10, unknown_11=$unknown_11, currentRecordingVideoDuration=$currentRecordingVideoDuration, unknown_14=$unknown_14, unknown_15=$unknown_15, unknown_16=$unknown_16, unknown_17=$unknown_17, unknown_19=$unknown_19, unknown_20=$unknown_20, unknown_21=$unknown_21, unknown_22=$unknown_22, unknown_23=$unknown_23, unknown_24=$unknown_24, unknown_26=$unknown_26, unknown_27=$unknown_27, unknown_28=$unknown_28, unknown_29='$unknown_29', unknown_30='$unknown_30', numberOfClientsConnected=$numberOfClientsConnected, streamingFeedStatus=$streamingFeedStatus, sdCardInserted=$sdCardInserted, remainingPhotos=$remainingPhotos, remainingVideoTime=$remainingVideoTime, numberOfBatchPhotosTaken=$numberOfBatchPhotosTaken, numberOfVideosShot=$numberOfVideosShot, numberOfAllPhotosTaken=$numberOfAllPhotosTaken, numberOfAllVideosTaken=$numberOfAllVideosTaken, dateTimeHex='$dateTimeHex', unknown_41=$unknown_41, unknown_42=$unknown_42, currentMode=$currentMode, currentSubMode=$currentSubMode, unknown_45=$unknown_45, unknown_46=$unknown_46, unknown_47=$unknown_47, unknown_48=$unknown_48, unknown_49=$unknown_49, remainingFreeSpace=$remainingFreeSpace, unknown_55=$unknown_55, unknown_56=$unknown_56, unknown_57=$unknown_57, unknown_58=$unknown_58, unknown_59=$unknown_59)"
+    }
+}
 
-    data class Settings (
+data class Settings (
             @SerializedName("1") val unknown_01: Int,
             @SerializedName("2") val videoResolution: Int,
             @SerializedName("3") val frameRate: Int,
@@ -142,4 +150,8 @@ data class GPStatusResponse  (
             // @SerializedName("74") val isoMode: Int
             // @SerializedName("75") val isoMinPhoto: Int
             // @SerializedName("76") val isoMinMs: Int
-    )
+    ) {
+    override fun toString(): String {
+        return "Settings(unknown_01=$unknown_01, videoResolution=$videoResolution, frameRate=$frameRate, fovVideo=$fovVideo, timelapsVideoInterval=$timelapsVideoInterval, loopingVideoInterval=$loopingVideoInterval, photoVideoInterval=$photoVideoInterval, lowLight=$lowLight, spotMeterVideo=$spotMeterVideo, protuneVideo=$protuneVideo, whiteBalanceVideo=$whiteBalanceVideo, colorVideo=$colorVideo, isoLimitVideo=$isoLimitVideo, sharpnessVideo=$sharpnessVideo, evCompVideo=$evCompVideo, unknown_16=$unknown_16, megapixelsPhoto=$megapixelsPhoto, continousMode=$continousMode, shutter=$shutter, spotMeterPhoto=$spotMeterPhoto, protunePhoto=$protunePhoto, whiteBalancePhoto=$whiteBalancePhoto, colorPhoto=$colorPhoto, isoLimitPhoto=$isoLimitPhoto, sharpnessPhoto=$sharpnessPhoto, evCompPhoto=$evCompPhoto, defaultMultishotSubMode=$defaultMultishotSubMode, megapixelsMs=$megapixelsMs, burstRateMs=$burstRateMs, timelapsIntervalMs=$timelapsIntervalMs, nightShutterExposureMs=$nightShutterExposureMs, nightlapsIntervalMs=$nightlapsIntervalMs, spotMeterMs=$spotMeterMs, protuneMs=$protuneMs, whiteBalanceMs=$whiteBalanceMs, colorMs=$colorMs, isoLimitMs=$isoLimitMs, sharpnessMs=$sharpnessMs, evCompMs=$evCompMs, unknown_40=$unknown_40, unknown_41=$unknown_41, unknown_42=$unknown_42, unknown_43=$unknown_43, unknown_44=$unknown_44, unknown_45=$unknown_45, unknown_46=$unknown_46, unknown_47=$unknown_47, unknown_48=$unknown_48, lcdBrightness=$lcdBrightness, lcdLock=$lcdLock, lcdTimeoutSleep=$lcdTimeoutSleep, orientation=$orientation, defaultBootMode=$defaultBootMode, quickCapture=$quickCapture, ledStatus=$ledStatus, volumeBeeps=$volumeBeeps, videoFormat=$videoFormat, onScreenData=$onScreenData, autoPowerOff=$autoPowerOff, unknown_60=$unknown_60, unknown_61=$unknown_61, unknown_62=$unknown_62, unknown_63=$unknown_63, unknown_64=$unknown_64, unknown_65=$unknown_65, unknown_66=$unknown_66, unknown_67=$unknown_67, currentVideoSubMode=$currentVideoSubMode, photoSubMode=$photoSubMode, multishotSubMode=$multishotSubMode, unknown_71=$unknown_71, lcdDisplay=$lcdDisplay)"
+    }
+}
